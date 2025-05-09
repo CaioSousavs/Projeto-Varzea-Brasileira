@@ -1,8 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 body{
     background-color: saddlebrown;
 }
 header{
-    position: sticky;
+    width: 100%;
+    position: fixed;
 }
 .nav{
     background-color: #C2B280;
@@ -26,4 +33,8 @@ header{
 .menu a {
     text-decoration: none;
     color: black;
+}
+
+.inicio {
+    padding-top: 6%;
 }
