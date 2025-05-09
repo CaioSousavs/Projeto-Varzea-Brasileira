@@ -1,0 +1,29 @@
+body{
+    background-color: saddlebrown;
+}
+header{
+    position: sticky;
+}
+.nav{
+    background-color: #C2B280;
+    display: flex;
+    width: auto;
+    margin: auto;
+    gap: 30%;
+}
+.logo img{
+    width: 100px;
+    height: 100px;
+    justify-content: flex-start             ;
+}
+.menu{
+    display: flex;
+    gap: 15%;
+    align-items: center;
+    list-style: none;
+    text-decoration: black;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+}
