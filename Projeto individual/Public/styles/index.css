@@ -5,14 +5,14 @@
 
 
 body{
-    background-color: saddlebrown;
+    background-color: #18161a;
 }
 header{
     width: 100%;
     position: fixed;
 }
 .nav{
-    background-color: #C2B280;
+    background-color: #666666;
     display: flex;
     width: auto;
     margin: auto;
@@ -36,5 +36,33 @@ header{
 }
 
 .inicio {
-    padding-top: 6%;
+    padding-top: 8%;
+    display: flex;
+}
+
+
+main p, h1, h2 {
+    color: white;
+}
+h1{
+font-size: 50px;
+margin-top: 10%;
+width: 150%;
+height: 20px;
+padding-right: 200px;
+}
+.paragrafo1 p{
+margin-top: 30%;
+height: 100px;
+width: 300px;
+padding-top: 110px;
+padding-right: 100px;
+padding-left:0;
+}
+ 
+.img1 img {
+    max-width: 900px;
+    width: 400px;
+    height: 400px;
+    padding-right: 0;
 }
