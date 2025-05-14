@@ -16,23 +16,25 @@ header{
     display: flex;
     width: auto;
     margin: auto;
-    gap: 30%;
+    gap: 400px;
 }
 .logo img{
     width: 100px;
     height: 100px;
-    justify-content: flex-start             ;
+    justify-content: flex-start; 
+    margin-left: 15px;
 }
 .menu{
     display: flex;
     gap: 15%;
     align-items: center;
     list-style: none;
-    text-decoration: black;
+    text-decoration: white;
 }
 .menu a {
     text-decoration: none;
-    color: black;
+    color: white;
+    font-size: 25px;
 }
 
 .inicio {
@@ -44,25 +46,34 @@ header{
 main p, h1, h2 {
     color: white;
 }
-h1{
+.container1{
+    display: flex;
+}
+.titulo1{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.titulo1 h1{
 font-size: 50px;
 margin-top: 10%;
 width: 150%;
 height: 20px;
 padding-right: 200px;
 }
-.paragrafo1 p{
-margin-top: 30%;
-height: 100px;
-width: 300px;
-padding-top: 110px;
-padding-right: 100px;
-padding-left:0;
+.titulo1 p{
+
 }
  
-.img1 img {
-    max-width: 900px;
-    width: 400px;
-    height: 400px;
+.img1{
+    display: flex;
+    border: red solid 2px;
+    width: 50%;
+    height: 20%;
     padding-right: 0;
+}
+.img1 img{
+    width: 80%;
+    height: 80%;
+    align-items: center;
 }
