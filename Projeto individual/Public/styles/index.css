@@ -19,8 +19,9 @@ header{
     gap: 400px;
 }
 .logo img{
-    width: 100px;
-    height: 100px;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 80px;
     justify-content: flex-start; 
     margin-left: 15px;
 }
@@ -52,33 +53,77 @@ main p, h1, h2 {
     max-height: 40%;
 }
 .titulo1{
-    margin-top:15% ;
     display: flex;
+    margin-top:19% ;
+    margin-left: 25px;
     flex-direction: column;
-    width: 60%;
-    border: red solid;
+    width: 50%;
+    /* border: red solid; */
     flex-direction: column;
 }
 .titulo1 h1{
-font-size: 75px;
+font-size: 90px;
+height: 0%;
+width: 100%;
+margin-left: 80px;
 }
-.titulo1 p{
-    margin-top: 1%;
-    font-size: 150%;
+.titulo1 button {
+    margin-left: 10%;
+    margin-top: 46%;
+    height: 5%;
+    width: 15%;
+    border-radius: 30px;
 }
- 
+
 .img1{
-    display: flex;
-        /* width: 50%;
-        height: 50%; */
+    border: red solid 1px;
+    display: flex;  
     padding-right: 0;
-    padding-top: 5% ;
+    white-space: nowrap;
+    padding-top: 15% ;
 }
 .img1 img{
     display: flex;
-    margin-top: -1;
     width: 100%;
     height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 {
+margin-top: 10%;
+}
+.titulo2{
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 12%;
+    border: red solid;
+}
+.titulo2 h1{
+font-size: 75px;
+}
+.titulo2 p{
+    margin-top: 1%;
+    font-size: 150%;
+}
+.img2 {
+     border: red solid 1px;
+    display: flex;  
+    padding-right: 0;
+    white-space: nowrap;
+    padding-top: 15% ;
+}
+.img2 img{
+    width: 95%;
+    height: 95%;
+}
+img{
+    margin-top: 7%  ;
+    display: flex;
+    width: 50%;
+    height: 50%;
     justify-content: center;
     align-items: center;
 }
