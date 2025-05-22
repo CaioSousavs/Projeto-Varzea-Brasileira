@@ -1,82 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Página Inicial</title>
-
-    <script src="./js/sessao.js"></script>
-
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Várzea Brasileira</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="js/carrosel.js" defer></script>
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
+
+  
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <img src="assets/Logo.png" alt="">
+      </div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Campeonatos</a></li>
+        <li><a href="#">Times</a></li>
+        <li><a href="#">Histórias</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container1">
+      <div class="titulo1">
+        <h1>VOCÊ<br>
+          CONHECE A <br>
+          VÁRZEA <br> BRASILEIRA?</h1>
+        <!-- <button onclick="varzea()">Descubra aqui!</button> -->
+      </div>
+      <div class="img1">
+        <img src="assets/menino.png" alt="">
       </div>
     </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
+    <div class="container3">
+      <div class="img3">
+
+        <div class="bloco1">
+          <img src="assets/menino com bola.png" alt="">
+          <p>O futebol de várzea é um berço do talento brasileiro e
+            um espelho da vida cotidiana de milhares de pessoas.
+            Muito mais do que esporte, ele é cultura, identidade e
+            resistência popular. Valorizar a várzea é reconhecer a
+            raiz mais genuína do futebol no Brasil.</p>
+        </div>
+
+        <div class="bloco2">
+          <img src="assets/favela.png" alt="">
+          <p>A várzea vai muito além do futebol. Hoje em dia todo jogo é um evento
+            nas comumidades, onde jovens e adultos de todas as idades se jutam para
+            prestigiar o jogo. Onde as torcidas tem o time como se fosse uma parte dele,
+            torcendo de corpo e alma, uma sensação que so quem vive pode entender.
+          </p>
+        </div>
+
+        <div class="bloco1">
+          <img src="assets/taça.png" alt="">
+          <p>Hoje em dia á várzea tem um grande impaccto no futebol
+            profissional, onde alguns jogadores vão para times profi
+            ssionais. Eventos como a taça das favelas, torneio criado
+            para dar uma chance aos jovens periferio=cos de mostrar seu talento</p>
+        </div>
+
       </div>
     </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
+
+    <div class="container3" id="jogador">
+      <div class="img2">
+        <img src="assets/Jogador.png" alt="Jogadores de Várzea">
+      </div>
+      <div class="titulo2">
+        <h1>COMO É
+          SER UM <br>
+          JOGADOR DE VÁRZEA</h1>
+        <p>Um jogador de várzea pode ter uma vida semelhante a de um jogador profissional, mas como é, viver a várzea?
+        </p>
+        <div class="container-slider">
+          <div class="container-imgs">
+            <button id="prev-button"><img src="assets/seta.png" alt=""></button>
+            <img src="assets/p1.png" alt="" class="slider on">
+            <img src="assets/p2.png" alt="" class="slider">
+            <img src="assets/p3.png" alt="" class="slider">
+            <img src="assets/p4.png" alt="" class="slider">
+            <img src="assets/p5.png" alt="" class="slider">
+            <img src="assets/p6.png" alt="" class="slider">
+            <img src="assets/p7.png" alt="" class="slider">
+            <img src="assets/p8.png" alt="" class="slider">
+            <img src="assets/p8.png" alt="" class="slider">
+            <button id="next-button"><img src="assets/seta.png" alt=""></button>
           </div>
         </div>
       </div>
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
+
+
+    <div class="container3">
+      <div class="titulo2">
+        <h1>O Menino da Várzea que Conquistou os Estádios</h1>
+        <p>Muitos craques começaram na várzea e brilharam no futebol mundial. A várzea é berço de talentos
+          inesquecíveis.</p>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/1tVsj0hGq1w?si=dxqUz7ZrkOc0Ajqj&amp;start=5"
+           title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+           gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
+      <img id="img1" src="assets/profissional.png" alt="Jogadores Profissionais">
     </div>
-  </body>
+
+
+    <section class="times-varzea">
+      <h2>Times da Várzea</h2>
+      <div class="escudos">
+        <img src="escudo1.png" alt="Escudo 1">
+        <img src="escudo2.png" alt="Escudo 2">
+        <img src="escudo3.png" alt="Escudo 3">
+        <img src="escudo4.png" alt="Escudo 4">
+        <img src="escudo5.png" alt="Escudo 5">
+        <img src="escudo6.png" alt="Escudo 6">
+        <img src="escudo7.png" alt="Escudo 7">
+      </div>
+    </section>
+
+    <section class="calculadora">
+      <h2>Calculadora de Valores</h2>
+      <form>
+        <input type="text" id="ipt_nome" placeholder="Ex: João Caio">
+        <input type="number" placeholder="Ex: 3" name="nivel">
+        <input type="number" id="ipt_idade" placeholder="Ex: 25">
+        <button type="submit">Calcular</button>
+      </form>
+    </section>
+
+    <section class="salario">
+      <h2>Quanto recebe um jogador de várzea?</h2>
+    </section>
+
+    <section class="campeonatos">
+      <h2>Campeonatos da Várzea</h2>
+      <p>Eventos que reúnem bairros inteiros, famílias e paixões. Os campeonatos da várzea são mais do que partidas: são
+        tradições que atravessam gerações.</p>
+      <img src="imagem-campeonatos.png" alt="Imagem Campeonatos da Várzea">
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Várzea Brasileira. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
 
 </html>
