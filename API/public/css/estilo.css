@@ -15,6 +15,58 @@ body {
   --tamanho-footer: 65px;
 }
 
+eader {
+    width: 100%;
+    position: fixed;
+    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav {
+      height: var(--tamanho-header);
+  border-bottom: 2px solid #4e4e4e;
+    display: flex;
+    width: auto;
+    margin: auto;
+    opacity: 95%;
+}
+
+.logo img {
+    margin-bottom: 5%;
+    width: 100%;
+    height: 80px;
+    justify-content: flex-start;
+    margin-left: 15px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-decoration: white;
+    width: auto;
+}
+
+.menu a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    width: 150px;
+    justify-content: space-around;
+    margin-left: 550%;
+}
+
+.inicio {
+    padding-top: 8%;
+    display: flex;
+}
+
+
+main p,
+h1
+ {
+    color: white;
+}
 .container {
   display: flex;
   width: 80%;
@@ -120,7 +172,7 @@ body {
 
 /* FOOTER */
 
-.footer {
+footer {
   background-color: #424242;
   height: 150px;
   color: #fff;
@@ -191,8 +243,8 @@ body {
 }
 
 .formulario select {
-  border: 2px solid #32b9cd;
-  background-color: white;
+  border: 2px solid #3b3b3b;
+  background-color: rgb(255, 255, 255);
   color: gray;
   height: 36px;
   text-align: center;
@@ -215,7 +267,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #ED145B;
+  background-color: #353535;
   width: 120px;
   height: 30px;
   align-self: center;

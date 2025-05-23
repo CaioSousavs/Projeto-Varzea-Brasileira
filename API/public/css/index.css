@@ -7,6 +7,7 @@
 
 body {
     background-color: #18161a;
+    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -15,14 +16,14 @@ header {
     font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .nav {
       height: var(--tamanho-header);
   border-bottom: 2px solid #4e4e4e;
     display: flex;
     width: auto;
     margin: auto;
-    gap: 400px;
-    opacity: 70%;
+    opacity: 95%;
 }
 
 .logo img {
@@ -35,22 +36,27 @@ header {
 
 .menu {
     display: flex;
-    gap: 15%;
     align-items: center;
     list-style: none;
     text-decoration: white;
+    width: auto;
 }
 
 .menu a {
+    display: flex;
     text-decoration: none;
     color: white;
     font-size: 25px;
+    width: 150px;
+    justify-content: space-around;
+    margin-left: 550%;
 }
 
 .inicio {
     padding-top: 8%;
     display: flex;
 }
+
 
 
 main p,
@@ -272,4 +278,28 @@ img {
 
 .container3 iframe {
     margin-top: 5%  ;
+}
+
+footer {
+    background-color: #4e4e4e;
+}
+.imgFooter img{
+    width: 2%;
+    height: 2%;
+}
+.imgFooter{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+    justify-content: center;
+    align-items: start;
+}
+.text {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+iframe {
+    border-radius: 10%;
 }

@@ -18,27 +18,20 @@
 <body>
 
     <!--Header-->
-
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
+    <header>
+        <nav class="nav">
+            <div class="logo">
+                <img src="assets/Logo.png" alt="">
+            </div>
+            <ul class="menu">
+                <li><a href="login.html">Home</a></li>
+                <li><a href="cadastro.html">Jogadores</a></li>
+                <li><a href="#" id="sobre_mim">Sobre mim</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastrar</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
 
 
     <div class="login">
@@ -72,12 +65,9 @@
     </div>
 
     <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
-    </div>
+    <footer>
+    <p>&copy; 2025 Várzea Brasileira. Todos os direitos reservados.</p>
+  </footer>
     <!--footer fim-->
 
 </body>
@@ -85,7 +75,7 @@
 </html>
 
 <script>
- function entrar() {
+    function entrar() {
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
@@ -128,7 +118,7 @@
 
                     setTimeout(function () {
                         window.location = "simulador.html";
-                    }, 1000); 
+                    }, 1000);
 
                 });
 
