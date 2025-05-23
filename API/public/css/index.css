@@ -12,14 +12,17 @@ body {
 header {
     width: 100%;
     position: fixed;
+    font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav {
-    background-color: #666666;
+      height: var(--tamanho-header);
+  border-bottom: 2px solid #4e4e4e;
     display: flex;
     width: auto;
     margin: auto;
     gap: 400px;
+    opacity: 70%;
 }
 
 .logo img {

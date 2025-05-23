@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
-<body onload="listar()">
+<body onload="">
   <!--header inicio-->
   <div class="header">
     <div class="container">
@@ -53,17 +53,13 @@
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
-          <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text" placeholder="Seu nome" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+                     <div class="campo">
+                       <span>Nome:</span>
+                       <input id="nome_input" type="text" placeholder="Seu nome" />
+                      </div>
+                      <div class="campo">
+                        <span>E-mail:</span>
+                        <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -77,6 +73,17 @@
         </div>
         <div id="div_aguardar" class="loading-div">
           <img src="./assets/circle-loading.gif" id="loading-gif" />
+        </div>
+        <div class="campo">
+          <span>Escolha uma posição:</span>
+         <select name="" id="ipt_jogador">
+          <option value="1">Goleiro</option>
+          <option value="2">Zagueiro</option>
+          <option value="3">Lateral</option>
+          <option value="4">Meio-Campista</option>
+          <option value="5">Atacante</option>
+          <option value="6">Treinador</option>
+         </select>
         </div>
 
         <div id="div_erros_login"></div>
@@ -99,7 +106,6 @@
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();
@@ -110,16 +116,14 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
-
+    var jogadorVar = ipt_jogador.value
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      jogadorVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -127,22 +131,10 @@
 
       finalizarAguardar();
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-        idEmpresaVincular = listaEmpresasCadastradas[i].id
-        console.log("Código de ativação válido.");
-        break;
-      } else {
-        cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-        finalizarAguardar();
-      }
-    }
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -153,10 +145,10 @@
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        emailServer: emailVar,
-        senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        nome: nomeVar,
+        email: emailVar,
+        senha: senhaVar,
+        fk_jogador: jogadorVar
       }),
     })
       .then(function (resposta) {
@@ -186,27 +178,27 @@
     return false;
   }
 
-  // Listando empresas cadastradas 
-  function listar() {
-    fetch("/empresas/listar", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((empresas) => {
-          empresas.forEach((empresa) => {
-            listaEmpresasCadastradas.push(empresa);
+  // // Listando empresas cadastradas 
+  // function listar() {
+  //   fetch("/empresas/listar", {
+  //     method: "GET",
+  //   })
+  //     .then(function (resposta) {
+  //       resposta.json().then((empresas) => {
+  //         empresas.forEach((empresa) => {
+  //           listaEmpresasCadastradas.push(empresa);
 
-            console.log("listaEmpresasCadastradas")
-            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
+  //           console.log("listaEmpresasCadastradas")
+  //           console.log(listaEmpresasCadastradas[0].codigo_ativacao)
+  //         });
+  //       });
+  //     })
+  //     .catch(function (resposta) {
+  //       console.log(`#ERRO: ${resposta}`);
+  //     });
+  // }
 
-  function sumirMensagem() {
-    cardErro.style.display = "none";
-  }
+  // function sumirMensagem() {
+  //   cardErro.style.display = "none";
+  // }
 </script>
