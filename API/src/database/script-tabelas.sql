@@ -20,14 +20,15 @@ create table usuario (
 create table quiz (
 	id int auto_increment,
     acertos int, 
-    erro int,
-    pontuacao int, 
-    dataRealizada date,
+    erros int,
+    pontuacao int,	
+    data_realizada datetime,
     fk_usuario int,
-    primary key (id),
-    foreign key (fk_usuario) references usuario(id)
+    foreign key (fk_usuario) references usuario(id),
+    primary key (id)
     );
     
+   
     insert into jogador(posicao)
     values ('Goleiro'),
 		   ('zagueiro'),
@@ -35,5 +36,17 @@ create table quiz (
            ('Meio-Campo'),
            ('Atacante'),
            ('Treinador');
-           
-           select*from jogador;
+                      
+	select u.nome as Nome, q.erros as Erros, q.pontuacao as Pontuação, data_realizada as Data_Realizada
+    from quiz q
+    inner join usuario u on u.id = q.fk_usuario;
+   
+
+   select*from quiz;
+   
+   
+   
+   select s.nome, s.email , j.posicao
+   from jogador j
+   inner join usuario s on s.fk_jogador = j.id
+   where s.nome like '%bruno%';
