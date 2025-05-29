@@ -24,6 +24,7 @@ header {
     width: auto;
     margin: auto;
     opacity: 95%;
+    backdrop-filter: blur(100px);
 }
 
 .logo img {
@@ -67,7 +68,7 @@ h2 {
 
 .container1 {
     display: flex;
-    border: wheat solid 2px;
+    /* border: wheat solid 2px; */
     max-height: 40%;
 }
 
@@ -272,7 +273,7 @@ img {
 .container3 {
     margin-top: 5%;
     display: flex;
-    border: wheat solid 2px;
+    /* border: wheat solid 2px; */
     max-height: 60%;
 }
 
