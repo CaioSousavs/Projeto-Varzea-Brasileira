@@ -2,12 +2,9 @@ var database = require("../database/config")
 
 function listar(idUsuario) {
     var intrucao = 
-    ` select q.acertos as Acertos, q.erro as Erros,
-    q.dataRealizada as Data_realizada,  s.nome as Nomes
-    from quiz_usuario qu
-    inner join usuario s on qu.fk_usuario = s.id
-    inner join quiz q on qu.fk_quiz = q.id
-    where s.id = ${idUsuario}`;
+       `select u.nome, q.pontuacao, q.erros
+    from quiz q
+    inner join usuario u on u.id = q.fk_usuario;`;
     console.log("Executando a instrução SQL: \n" + intrucao);
     return database.executar(instrucao);
 }

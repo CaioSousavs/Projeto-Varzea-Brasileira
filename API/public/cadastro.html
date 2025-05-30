@@ -12,7 +12,7 @@
   <script src="js/validação do quiz.js"></script>
 
   <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
+  <link rel="icon" href="assets/logoSite.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
@@ -58,14 +58,17 @@
                       <div class="campo">
                         <span>E-mail:</span>
                         <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+                        <div id="output_emailVar"></div>
           </div>
           <div class="campo">
             <span>Senha:</span>
             <input id="senha_input" type="password" placeholder="******" />
+            <div id="output_senhaVar"></div>
           </div>
           <div class="campo">
             <span>Confirmação da Senha:</span>
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            <div id="output_confirmacao"></div>
           </div>
           <div class="campo">
             <span>Escolha uma posição:</span>
@@ -132,7 +135,7 @@
     const caractresEspeciais = /[!@#%&*().;,/]/;
 
     // Verifica se os campos estão preenchidos
-    if (emailVar == "" || senhaVar == ""|| nome_usuario=="" || confirmacaoSenhaVar=="") {
+    if (emailVar == "" || senhaVar == ""|| nomeVar=="" || confirmacaoSenhaVar=="") {
         alert("Preencha todos os campos!");
         return;
     }
@@ -141,8 +144,9 @@
         //Condicao 1
         if (i == 1) {
             if (!emailVar.endsWith(".com")) {
-                output_emailVar.innerHTML += `O emailVar deve terminar em .com<br>`
+                output_emailVar.innerHTML += `O email deve terminar em .com<br>`
                 output_emailVar.style.color = 'red';
+                return;
             }
         
 
@@ -150,15 +154,17 @@
         //Condicao 2
         else if (i == 2) {
             if (!emailVar.includes("@")) {
-                output_emailVar.innerHTML += `O emailVar deve conter @<br>`
+                output_emailVar.innerHTML += `O email deve conter @<br>`
                 output_emailVar.style.color = 'red';
+                return;
             }
 
         }
         else if(i==3){
-            if(emailVar!=confirmacao_email){
+            if(senhaVar!=confirmacaoSenhaVar){
                 output_confirmacao.innerHTML += `Os emails devem ser iguais`
                 output_confirmacao.style.color = 'red';
+                return;
                 console.log(`sim`)
             }
         }
@@ -167,33 +173,38 @@
     for (j = 1; j < 6; j++) {
         if (j == 1) {
             if (!caractresEspeciais.test(senhaVar)) {
-                output_senhaVar.innerHTML += `A senhaVar deve conter no mínimo 1 caracter especial<br>`
+                output_senhaVar.innerHTML += `A senha deve conter no mínimo 1 caracter especial<br>`
                 output_senhaVar.style.color = `red`
+                return;
             }
 
         }
     
     else if (j == 2) {
         if (senhaVar.length < 8) {
-            output_senhaVar.innerHTML += `A senhaVar deve conter no mínimo 8 caracteres<br>`
+            output_senhaVar.innerHTML += `A senha deve conter no mínimo 8 caracteres<br>`
             output_senhaVar.style.color = `red`
+            return;
         }
 
     }
     else if (j == 3) {
         if (!numeros.test(senhaVar)) {
-            output_senhaVar.innerHTML += `A senhaVar deve conter no mínimo 1 caracter numérico<br>`
+            output_senhaVar.innerHTML += `A senha deve conter no mínimo 1 caracter numérico<br>`
             output_senhaVar.style.color = `red`
+            return;
         }
 
     }
     else if (j == 4) {
         if (!LetrasMinusculas.test(senhaVar)) {
-            output_senhaVar.innerHTML += `A senhaVar deve conter no mínimo 1 letra maiúscula<br>`
+            output_senhaVar.innerHTML += `A senha deve conter no mínimo 1 letra maiúscula<br>`
             output_senhaVar.style.color = `red`
+            return;
         }
         if(confirmacaoSenhaVar != senhaVar){
           output_senhaVar += `Os campos devem ser iguais`
+          return;
         }
 
     }

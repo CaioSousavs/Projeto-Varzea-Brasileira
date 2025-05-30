@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+  background-color: rgb(37, 37, 37);
 }
 
 :root {
@@ -410,4 +410,18 @@ input {
   50%  {transform: rotate(25deg)}
   75%  {transform: rotate(-25deg)}
   100% {transform: rotate(25deg)}
+}
+
+.simulador{
+  display: flex;
+}
+
+.simulador , .container{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.simulador , .container h3{
+  font-size: 30px;
 }
