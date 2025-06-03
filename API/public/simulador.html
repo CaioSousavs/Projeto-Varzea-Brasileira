@@ -10,7 +10,8 @@
     <link rel="icon" type="imagex=icon" href="assets/logoSite.png">
     <script src="./js/sessao.js"></script>
 
-    <link rel="stylesheet" href="./css/estilo.css">
+    <!-- <link rel="stylesheet" href="./css/estilo.css"> -->
+     <link rel="stylesheet" href="css/simulador.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 
@@ -37,7 +38,7 @@
     <div class="simulador">
         <div class="container">
             <h2>Não é só no drible: vem pro quiz!</h2>
-            <p>Fazer o quiz:</p>
+            <p>Bora bater um bolinha?</p>
             <div class="botoes">
             <button onclick="sim()">Sim</button>
             <button onclick="nao()">Não</button>
@@ -47,15 +48,35 @@
     <!-- simulador fim -->
 
     <!--footer inicio-->
+   <footer>
     <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
-        </div>
+      <div class="text">
+        <p>&copy; 2025 Várzea Brasileira. Todos os direitos reservados.</p>
+      </div>
+      <div class="imgFooter">
+        <img src="assets/icon/linkedin.png" alt="Icon do Linkedin">
+        <img src="assets/icon/github.png" alt="Icon do Github">
+      </div>
     </div>
+  </footer>
     <!--footer fim-->
 
 
 </body>
+<script>
 
+  function sim(){
+    setTimeout(function () {
+    window.location = "quiz copy.html";
+    }, 1000);
+
+  }
+
+  function nao(){
+    setTimeout(function () {
+    window.location = "index login.html";
+    }, 1000);
+
+  }
+</script>
 </html>

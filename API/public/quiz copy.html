@@ -21,17 +21,18 @@
                     </div>
                     <ul class="menu">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Campeonatos</a></li>
-                        <li><a href="#">Times</a></li>
-                        <li><a href="#">Histórias</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Jogadores</a></li>
+                        <li><a href="#">Sobre mim</a></li>
+                        <li><a href="#" id="sobre_mim">Olá, <span id="b_usuario">usuário</span>!</a></li>
+                        <div class="btn-logout" onclick="limparSessao()">
+                            <li><a href="">Sair</a></li>
                     </ul>
                 </nav>
             </header>
             <main>
                 <div class="container">
-                     <h1>Copa Várzea de Sabedoria</h1>
-                     <div class="quiz">
+                    <h1>Copa Várzea de Sabedoria</h1>
+                    <div class="quiz">
                         <h2 id="perguntas">Pergunta</h2>
                         <div id="reposta_btn">
                             <button class="btn">Resposta 1</button>
@@ -40,12 +41,15 @@
                             <button class="btn">Resposta 4</button>
                         </div>
                         <div class="div_proxBtn" id="div_proxBtn">
-                        <button id="Proxima_btn">Proxima</button>
+                            <button id="Proxima_btn">Proxima</button>
                         </div>
-                     </div>
+                    </div>
                 </div>
             </main>
         </body>
 
 </html>
+<script>
+          b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>
 <script src="js/validação do quiz.js"></script>
