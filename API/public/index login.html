@@ -25,9 +25,9 @@
         <li><a href="#jogador" id="sobre_mim">Sobre mim</a></li>
         <li><a href="dashboard.html" id="sobre_mim">Dashboard</a></li>
         <li><a href="quiz copy.html">Quiz</a></li>
-        <li><a href="#">Olá,<span id="b_usuario"></span>!</a></li>    
-        <div  class="btn-logout" onclick="limparSessao()">
-         <li><a href="login.html">Sair</a></li>
+        <li><a href="#">Olá,<span id="b_usuario"></span>!</a></li>
+        <div class="btn-logout" onclick="limparSessao()">
+          <li><a href="login.html">Sair</a></li>
         </div>
       </ul>
     </nav>
@@ -122,31 +122,46 @@
 
 
     <div class="times-varzea">
-      <h2>Times da Várzea</h2>
-      <div class="escudos">
-      
-      </div>
+      <div class="imagemdoescudo">
+        <img src="assets/escudoMarcone.png" alt="">
+            </div>
+        <!-- <div class="container-slider">
+          <div class="container-imgs">
+            <button id="prev-button"><img src="assets/seta.png" alt=""></button>
+            <img src="assets/p1.png" alt="" class="slider on">
+            <img src="assets/p2.png" alt="" class="slider">
+            <img src="assets/p3.png" alt="" class="slider">
+            <img src="assets/p4.png" alt="" class="slider">
+            <img src="assets/p5.png" alt="" class="slider">
+            <img src="assets/p6.png" alt="" class="slider">
+            <img src="assets/p7.png" alt="" class="slider">
+            <img src="assets/p8.png" alt="" class="slider">
+            <img src="assets/p8.png" alt="" class="slider">
+            <button id="next-button"><img src="assets/seta.png" alt=""></button>
+          </div>
+        </div> -->
+  
     </div>
 
     <div class="calculadora_financeira">
-                <div class="textos-calc">
-                    <p>Calculadora</p>
-                    <div class="titulo-resposta">
-                        <h1>Descubra agora quanto você ganharia na Várzea Brasileira!.</h1>
-                    </div>
-                    <div class="inputs_calc">
-                        <p>Insira a sua idade</p>
-                        <input type="number" id="ipt_idade" placeholder="Ex: 18 "/>
-                        <p class="input-texto"> Insira sua posição</p>
-                        <input type="number" id="ipt_visitasmedia" placeholder="Ex: Goleiro" />
-                        <p class="input-texto"> Insira seu nivel de habilidade</p>
-                        <input type="number" id="ipt_visitasmedia" placeholder="1 a 5" />
-                    </div>
-                    <button class="botao_calc" onclick="calcular()">Calcular</button>
-                </div>
-                <div class="vazio" id="div_resultado"></div>
-            </div>
+      <div class="textos-calc">
+        <p>Calculadora</p>
+        <div class="titulo-resposta">
+          <h1>Descubra agora quanto você ganharia na Várzea Brasileira!.</h1>
         </div>
+        <div class="inputs_calc">
+          <p>Insira a sua idade</p>
+          <input type="number" id="ipt_idade" placeholder="Ex: 18 " />
+          <p class="input-texto"> Insira sua posição</p>
+          <input type="number" id="ipt_visitasmedia" placeholder="Ex: Goleiro" />
+          <p class="input-texto"> Insira seu nivel de habilidade</p>
+          <input type="number" id="ipt_visitasmedia" placeholder="1 a 5" />
+        </div>
+        <button class="botao_calc" onclick="calcular()">Calcular</button>
+      </div>
+      <div class="vazio" id="div_resultado"></div>
+    </div>
+    </div>
 
     <div class="salario">
       <h2>Quanto recebe um jogador de várzea?</h2>
@@ -175,9 +190,10 @@
 
 </body>
 <script>
-      b_usuario.innerHTML += sessionStorage.NOME_USUARIO;
-      console.log(sessionStorage.NOME_USUARIO)
+  b_usuario.innerHTML += sessionStorage.NOME_USUARIO;
+  console.log(sessionStorage.NOME_USUARIO)
 
-  
+
 </script>
+
 </html>

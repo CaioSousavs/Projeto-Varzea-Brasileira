@@ -189,13 +189,13 @@ function resultadoFinal() {
 
 
     const SairdoQuiz = document.createElement("button"); // cria o botão de refazer o quiz
-    SairdoQuiz.innerHTML = "SairdoQuiz "; // Define o texto do botão
+    SairdoQuiz.innerHTML = "Sair do Quiz "; // Define o texto do botão
     SairdoQuiz.classList.add("btn"); // Aadicona a class para ser usado no css
     SairdoQuiz.addEventListener("click", () => {
       
         SairdoQuiz.remove(); // remove o botao refazer apos o click
         setTimeout(function () {
-                        window.location = "index.html";
+                        window.location = "index login.html";
                     }, 1000);// reinicia o quiz
     });
 

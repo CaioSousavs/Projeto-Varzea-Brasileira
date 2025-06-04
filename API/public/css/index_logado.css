@@ -286,6 +286,30 @@ img {
 .container3 iframe {
     margin-top: 5%  ;
 }
+
+
+
+.times-varzea {
+    display: flex;
+    margin-top: 2%;
+    width: 1835px;
+    height: 900px; 
+    background-image: url('../assets/marcone.png');
+    background-size: cover;
+}
+
+.times-varzea .container-slider {
+padding-left: 90px ;
+}
+.imagemdoescudo{
+    width: 45%;
+    height: 75%;
+    padding-left: 130px;
+    padding-top: 250px;
+}
+
+
+
 .calculadora{
     display: flex;
     border: gray solid 2px;

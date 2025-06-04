@@ -1,13 +1,11 @@
 var quizModel = require("../models/quizModel");
 
-function listar(res,req){
-    var idUsuario = req.body.idUsuarioServer;
-    quizModel.listar(idUsuario).then(function(resultado){
-
+function listar(req, res) {
+    quizModel.listar().then(function(resultado) {
         res.status(200).json(resultado);
-    }).catch(function(erro){
+    }).catch(function(erro) {
         res.status(500).json(erro.sqlMessage);
-    })
+    });
 }
 
 function cadastrar (req, res) {
