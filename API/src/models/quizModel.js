@@ -11,7 +11,7 @@ inner join usuario u on u.id = q.fk_usuario;`;
 
 function conferir(idUsuario) {
     var instrucao = 
-   `select*from quiz where fk_usuario = ${idUsuario}`;
+   `select * from quiz where fk_usuario = ${idUsuario};`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

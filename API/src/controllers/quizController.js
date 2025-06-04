@@ -9,7 +9,7 @@ function listar(req, res) {
 }
 
 function conferir(req, res) {
-    var idUsuario = req.params.idUsuarioServer
+    var idUsuario = req.params.idUsuario
 
     quizModel.conferir(idUsuario).then(function(resultado) {
         res.status(200).json(resultado);

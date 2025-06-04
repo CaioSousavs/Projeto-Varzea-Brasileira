@@ -1,5 +1,37 @@
 
 
+function conferir(){ 
+    var idUsuario = sessionStorage.ID_USUARIO;
+    console.log("ID USUARIO FUNÇÃO: " + idUsuario)
+   
+    fetch(`/quiz/conferir/${idUsuario}`,
+        {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then (function(resposta){
+        console.log("ENTREI AQUI")
+        if(resposta.ok){
+            console.log('entrei aqui12');
+            
+            resposta.json().then(function(resposta){
+                console.log(resposta);
+                if(resposta[0].fk_usuario == undefined){
+                    console.log('entrei aqui')
+                } else {
+                    setTimeout(function() {
+                            window.location = "index_login.html";
+                        }, 1000);
+    
+                        console.log('não funcinou')
+                }
+            })
+        }
+    })
+}
+
+
 
 
 
@@ -200,8 +232,8 @@ function resultadoFinal() {
       
         SairdoQuiz.remove(); // remove o botao refazer apos o click
         setTimeout(function () {
-                        window.location = "index login.html";
-                    }, 1000);// reinicia o quiz
+                        window.location = "index_login.html";
+                    }, 1000);
     });
 
     
