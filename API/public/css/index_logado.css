@@ -41,6 +41,7 @@ header {
     list-style: none;
     text-decoration: white;
     width: auto;
+    margin-left: 35%;
 }
 
 .menu a {
@@ -50,7 +51,6 @@ header {
     font-size: 25px;
     width: 150px;
     justify-content: space-around;
-    margin-left: 400%;
 }
 
 .inicio {
@@ -236,20 +236,20 @@ img {
     width: 500px;
   height: 300px;
 }
+
 .slider {
     opacity: 0;
     transition: opacity .2s;
     position: absolute;
     width: 50px;
-    border-radius: 10px;
-    
+    border-radius: 10px;    
 }
 
 .on {
     opacity: 1;
 }
 
-#prev-button, #next-button {
+.prev , .next {
     width: 300px;
   height: 300px;
   border: none;
@@ -259,13 +259,13 @@ img {
   justify-content: space-around;
 }
 
-#prev-button img {
+.prev img {
     width: 100px;
     height: 100px;
     margin-left: 100%;
     margin-top: 62%;
 } 
-#next-button img {
+.next img {
     width: 100px;
     height: 100px;
     margin-left: 100%;
@@ -289,7 +289,7 @@ img {
 
 
 
-.times-varzea {
+.timesvarzea {
     display: flex;
     margin-top: 2%;
     width: 1835px;
@@ -298,7 +298,7 @@ img {
     background-size: cover;
 }
 
-.times-varzea .container-slider {
+.timesvarzea .container-slider {
 padding-left: 90px ;
 }
 .imagemdoescudo{
@@ -307,6 +307,51 @@ padding-left: 90px ;
     padding-left: 130px;
     padding-top: 250px;
 }
+
+.foto {
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: absolute;
+  width: 490px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.ativa {
+  opacity: 1;
+}
+
+#botao-voltar, #botao-proximo {
+  width: 300px;
+  height: 300px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+}
+
+#botao-voltar img {
+  width: 100px;
+  height: 100px;
+  margin-left: 100%;
+}
+
+#botao-proximo img {
+  width: 100px;
+  height: 100px;
+  margin-left: 500px;
+  margin-top: 20%;
+}
+
+#botao-voltar {
+  transform: rotate(180deg);
+}
+
+.caixa-slider button{
+
+}
+
 
 
 

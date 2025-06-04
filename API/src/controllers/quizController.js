@@ -8,6 +8,16 @@ function listar(req, res) {
     });
 }
 
+function conferir(req, res) {
+    var idUsuario = req.params.idUsuarioServer
+
+    quizModel.conferir(idUsuario).then(function(resultado) {
+        res.status(200).json(resultado);
+    }).catch(function(erro) {
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 function cadastrar (req, res) {
     console.log("ENTROU NO CADASTRAR")
     var idUsuario = req.body.idUsuarioServer;
@@ -32,5 +42,6 @@ function cadastrar (req, res) {
 
 module.exports = {
     listar,
+    conferir,
     cadastrar
 }

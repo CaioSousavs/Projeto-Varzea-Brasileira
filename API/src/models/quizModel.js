@@ -9,6 +9,14 @@ inner join usuario u on u.id = q.fk_usuario;`;
     return database.executar(instrucao);
 }
 
+function conferir(idUsuario) {
+    var instrucao = 
+   `select*from quiz where fk_usuario = ${idUsuario}`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
 function cadastrar(pontos, erros, idUsuario) {
     
     var instrucao = 
@@ -20,5 +28,6 @@ function cadastrar(pontos, erros, idUsuario) {
 
 module.exports = {
     cadastrar, 
-    listar
+    listar,
+    conferir
 };

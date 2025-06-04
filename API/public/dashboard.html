@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaTech | Dashboards</title>
 
-    
+
     <link rel="stylesheet" href="css/estilo.css" />
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
@@ -28,33 +28,32 @@
 <body>
 
 
-      <header>
-    <nav class="nav">
-      <div class="logo">
-        <img src="assets/Logo.png" alt="">
-      </div>
-      <ul class="menu">
-        <li><a href="login.html">Home</a></li>
-        <li><a href="quiz copy.html">Jogadores</a></li>
-        <li><a href="#" id="sobre_mim">Sobre mim</a></li>
-        <li><a href="#" id="sobre_mim">Olá, <span id="b_usuario">usuário</span>!</a></li>    
-        <div class="btn-logout" onclick="limparSessao()">
-         <li><a href="">Sair</a></li>
-        </div>
-      </ul>
-    </nav>
-  </header>
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
+    <header>
+        <nav class="nav">
+            <div class="logo">
+       <a href="index login.html" > <img src="assets/Logo.png" alt=""></a>
             </div>
+            <ul class="menu">
+                <li><a href="index login.html">Home</a></li>
+                <li><a href="index login.html#jogador">Jogadores</a></li>
+                <li><a href="#" id="sobre_mim">Olá, <span id="b_usuario">usuário</span>!</a></li>
+                <div class="btn-logout" onclick="limparSessao()">
+                    <li><a href="">Sair</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div class="btn-nav">
 
-            
+        <h3>Gráficos</h3>
 
-                   <canvas id="graficoBarras">
+    </div>
 
-                   </canvas>
+
+
+    <canvas id="graficoBarras">
+
+    </canvas>
 
 
 </body>
@@ -147,59 +146,65 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
 
-let meuGraficoBarras = null;
 
-function gerarGraficoBarras() {
-    fetch('/quiz/listar')
-        .then(res => res.json())
-        .then(data => {
-            const nomes = data.map(item => item.nome);
-            const pontuacoes = data.map(item => item.pontuacao);
 
-            const ctx = document.getElementById('graficoBarras').getContext('2d');
+    let meuGraficoBarras = null;
 
-            // Destroi gráfico anterior se existir
-            if (meuGraficoBarras != null) {
-                meuGraficoBarras.destroy();
-            }
+    function gerarGraficoBarras() {
+        fetch('/quiz/listar')
+            .then(res => res.json())
+            .then(data => {
+                const nomes = [];
+                const pontuacoes = [];
 
-            // Cria novo gráfico de barras
-            meuGraficoBarras = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: nomes,
-                    datasets: [{
-                        label: 'Pontuação dos Usuários',
-                        data: pontuacoes,
-                        backgroundColor: nomes.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)),
-                        borderColor: '#333',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        title: {
-                            display: true,
-                            text: 'Pontuação de Todos os Usuários'
-                        }
+                data.forEach(item => {
+                    nomes.push(item.nome);
+                    pontuacoes.push(item.pontuacao);
+                });
+
+                const ctx = document.getElementById('graficoBarras').getContext('2d');
+
+                if (meuGraficoBarras != null) {
+                    meuGraficoBarras.destroy();
+                }
+
+                meuGraficoBarras = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: nomes,
+                        datasets: [{
+                            label: 'Pontuação dos Usuários',
+                            data: pontuacoes,
+                            backgroundColor: nomes.map(() => '#' + Math.floor(Math.random() * 16777215).toString(16)),
+                            borderColor: '#333',
+                            borderWidth: 1
+                        }]
                     },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 10
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Pontuação de Todos os Usuários'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 10
+                            }
                         }
                     }
-                }
-            });
-        })
-        .catch(err => console.error('Erro ao buscar dados:', err));
-}
+                });
+            })
+            .catch(err => console.error('Erro ao buscar dados:', err));
+    }
 
-window.addEventListener('load', gerarGraficoBarras);
+    window.addEventListener('load', gerarGraficoBarras);
+
 
 
 
@@ -230,7 +235,7 @@ window.addEventListener('load', gerarGraficoBarras);
     // }
 
     // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // // Configura o gráfico (cores, tipo, etc), materializa-o na página e,
     // // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     // function plotarGrafico(resposta, idAquario) {
 
@@ -295,7 +300,7 @@ window.addEventListener('load', gerarGraficoBarras);
 
 
     // // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // // buscando a última medida inserida em tabela contendo as capturas, 
+    // // buscando a última medida inserida em tabela contendo as capturas,
 
     // //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     // //     Para ajustar o "select", ajuste o comando sql em src/models

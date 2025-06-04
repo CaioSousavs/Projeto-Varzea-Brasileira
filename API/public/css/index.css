@@ -41,6 +41,7 @@ header {
     list-style: none;
     text-decoration: white;
     width: auto;
+    margin-left: 55%;
 }
 
 .menu a {
@@ -50,7 +51,6 @@ header {
     font-size: 25px;
     width: 150px;
     justify-content: space-around;
-    margin-left: 550%;
 }
 
 .inicio {

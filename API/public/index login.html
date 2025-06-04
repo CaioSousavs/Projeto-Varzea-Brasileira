@@ -17,13 +17,13 @@
   <header>
     <nav class="nav">
       <div class="logo">
-        <img src="assets/Logo.png" alt="">
+        <a href="index login.html"> <img href="index login.html" src="assets/Logo.png" alt=""></a>
       </div>
       <ul class="menu">
-        <li><a href="login.html">Home</a></li>
-        <li><a href="#jogador" id="sobre_mim">Jogador</a></li>
-        <li><a href="#jogador" id="sobre_mim">Sobre mim</a></li>
-        <li><a href="dashboard.html" id="sobre_mim">Dashboard</a></li>
+        <li><a href="index login.html">Home</a></li>
+        <li><a href="index login.html#jogador" id="sobre_mim">Jogador</a></li>
+        <li><a href="index login.html#calculadora">Calculadora</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="quiz copy.html">Quiz</a></li>
         <li><a href="#">Olá,<span id="b_usuario"></span>!</a></li>
         <div class="btn-logout" onclick="limparSessao()">
@@ -88,7 +88,7 @@
         </p>
         <div class="container-slider">
           <div class="container-imgs">
-            <button id="prev-button"><img src="assets/seta.png" alt=""></button>
+            <button class="prev" id="prev-button"><img src="assets/seta.png" alt=""></button>
             <img src="assets/p1.png" alt="" class="slider on">
             <img src="assets/p2.png" alt="" class="slider">
             <img src="assets/p3.png" alt="" class="slider">
@@ -98,7 +98,7 @@
             <img src="assets/p7.png" alt="" class="slider">
             <img src="assets/p8.png" alt="" class="slider">
             <img src="assets/p8.png" alt="" class="slider">
-            <button id="next-button"><img src="assets/seta.png" alt=""></button>
+            <button class="next"  id="next-button"><img src="assets/seta.png" alt=""></button>
           </div>
         </div>
       </div>
@@ -121,29 +121,36 @@
     </div>
 
 
-    <div class="times-varzea">
+    <div class="timesvarzea">
       <div class="imagemdoescudo">
         <img src="assets/escudoMarcone.png" alt="">
-            </div>
-        <!-- <div class="container-slider">
-          <div class="container-imgs">
-            <button id="prev-button"><img src="assets/seta.png" alt=""></button>
-            <img src="assets/p1.png" alt="" class="slider on">
-            <img src="assets/p2.png" alt="" class="slider">
-            <img src="assets/p3.png" alt="" class="slider">
-            <img src="assets/p4.png" alt="" class="slider">
-            <img src="assets/p5.png" alt="" class="slider">
-            <img src="assets/p6.png" alt="" class="slider">
-            <img src="assets/p7.png" alt="" class="slider">
-            <img src="assets/p8.png" alt="" class="slider">
-            <img src="assets/p8.png" alt="" class="slider">
-            <button id="next-button"><img src="assets/seta.png" alt=""></button>
-          </div>
-        </div> -->
-  
+      </div>
+         <div class="caixa-slider">
+  <div class="caixa-fotos">
+    
+    <button class="prev" id="botao-voltar">
+      <img src="assets/seta.png" alt="Voltar">
+    </button>
+    
+    <img src="assets/p1.png" alt="Foto 1" class="foto ativa">
+    <img src="assets/p2.png" alt="Foto 2" class="foto">
+    <img src="assets/p3.png" alt="Foto 3" class="foto">
+    <img src="assets/p4.png" alt="Foto 4" class="foto">
+    <img src="assets/p5.png" alt="Foto 5" class="foto">
+    <img src="assets/p6.png" alt="Foto 6" class="foto">
+    <img src="assets/p7.png" alt="Foto 7" class="foto">
+    <img src="assets/p8.png" alt="Foto 8" class="foto">
+
+    <button id="botao-proximo">
+      <img src="assets/seta.png" alt="Próximo">
+    </button>
+
+  </div>
+</div>
+
     </div>
 
-    <div class="calculadora_financeira">
+    <div class="calculadora_financeira" id="calculadora">
       <div class="textos-calc">
         <p>Calculadora</p>
         <div class="titulo-resposta">
@@ -162,18 +169,6 @@
       <div class="vazio" id="div_resultado"></div>
     </div>
     </div>
-
-    <div class="salario">
-      <h2>Quanto recebe um jogador de várzea?</h2>
-    </div>
-
-    <div class="campeonatos">
-      <h2>Campeonatos da Várzea</h2>
-      <p>Eventos que reúnem bairros inteiros, famílias e paixões. Os campeonatos da várzea são mais do que partidas: são
-        tradições que atravessam gerações.</p>
-      <img src="imagem-campeonatos.png" alt="Imagem Campeonatos da Várzea">
-    </div>
-
   </main>
 
   <footer>

@@ -34,3 +34,41 @@ function prevSlider() {
 
 btnNext.addEventListener('click', nextSlider)
 btnPrev.addEventListener('click', prevSlider)
+
+
+const fotos = document.querySelectorAll('.foto');
+const botaoVoltar = document.getElementById('botao-voltar');
+const botaoProximo = document.getElementById('botao-proximo');
+
+let fotoAtual = 0;
+
+function esconderFotos() {
+  fotos.forEach(item => item.classList.remove('ativa'));
+}
+
+function mostrarFoto() {
+  fotos[fotoAtual].classList.add('ativa');
+}
+
+function proximaFoto() {
+  esconderFotos();
+  if (fotoAtual === fotos.length - 1) {
+    fotoAtual = 0;
+  } else {
+    fotoAtual++;
+  }
+  mostrarFoto();
+}
+
+function voltarFoto() {
+  esconderFotos();
+  if (fotoAtual === 0) {
+    fotoAtual = fotos.length - 1;
+  } else {
+    fotoAtual--;
+  }
+  mostrarFoto();
+}
+
+botaoProximo.addEventListener('click', proximaFoto);
+botaoVoltar.addEventListener('click', voltarFoto);
