@@ -2,9 +2,19 @@ var database = require("../database/config")
 
 function listar() {
     var instrucao = 
-   `select u.nome, q.pontuacao, q.erros
+   `select u.nome, q.pontuacao
 from quiz q
 inner join usuario u on u.id = q.fk_usuario;`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function Pizza(idUsuario) {
+    var instrucao = 
+   ` select u.nome, q.acertos as Acertos, q.erros as Erros
+ from quiz q 
+ inner join usuario u on u.id = q.fk_usuario
+ where u.nome = '${idUsuario}'  `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
@@ -28,6 +38,7 @@ function cadastrar(pontos, erros, idUsuario) {
 
 module.exports = {
     cadastrar, 
+    Pizza,
     listar,
     conferir
 };

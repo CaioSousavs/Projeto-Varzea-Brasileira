@@ -8,6 +8,16 @@ function listar(req, res) {
     });
 }
 
+function Pizza(req, res) {
+    var idUsuario = req.params.idUsuario
+
+    quizModel.Pizza(idUsuario).then(function(resultado) {
+        res.status(200).json(resultado);
+    }).catch(function(erro) {
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 function conferir(req, res) {
     var idUsuario = req.params.idUsuario
 
@@ -42,6 +52,7 @@ function cadastrar (req, res) {
 
 module.exports = {
     listar,
+    Pizza,
     conferir,
     cadastrar
 }

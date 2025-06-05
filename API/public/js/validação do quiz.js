@@ -110,25 +110,25 @@ const pergunta = [
     }
 ];
 
-const PerguntaElement = document.getElementById('perguntas'); // gera a pergunta 
-const RespostasButtons = document.getElementById('reposta_btn'); // cria os botões de respostas
-const ProximoButton = document.getElementById('Proxima_btn'); // Gera o botão para proxima questão
+const PerguntaButton = document.getElementById('perguntas');  
+const RespostasButtons = document.getElementById('reposta_btn');
+const ProximoButton = document.getElementById('Proxima_btn'); 
 
-// Variáveis para controlar o índice da pergunta atual e a pontuação do usuário
-let QuestaoAtualIndex = 0; // Questão atual     
-let pontos = 0; // // vai ser usado para contar os pontos
+
+let QuestaoAtualIndex = 0; 
+let pontos = 0; 
 let erros = 0;
 
 
 function comecarQuiz() {
-    QuestaoAtualIndex = 0; //zera o contador 
-    pontos = 0; // zera a pontuação
+    QuestaoAtualIndex = 0; 
+    pontos = 0; 
     ProximoButton.innerHTML = "Próximo"; // Define um botão proximo
-    mostrarQuestao(); // Mostra a questão
+    mostrarQuestao(); 
 }
 
 
-function resetar() { // reseta o quiz 
+function resetar() { 
     ProximoButton.style.display = 'none'; // faz com que o botao proximo suma
     
     while (RespostasButtons.firstChild) {
@@ -136,11 +136,11 @@ function resetar() { // reseta o quiz
     }
 }
 
-function mostrarQuestao() { // mostrar a questão atual
-    resetar(); // reseta tudo antes de mostar a proxima pergunta
-    let QuestaoAtual = pergunta[QuestaoAtualIndex]; // puxa a questão atual
+function mostrarQuestao() { 
+    resetar(); 
+    let QuestaoAtual = pergunta[QuestaoAtualIndex]; 
     let TextQuestao = QuestaoAtualIndex + 1; // calcula o numero da questao
-    PerguntaElement.innerHTML = `${TextQuestao}. ${QuestaoAtual.pergunta}`; // Puxa a questao e exibe ela
+    PerguntaButton.innerHTML = `${TextQuestao}. ${QuestaoAtual.pergunta}`; // Puxa a questao e exibe ela
 
 
     QuestaoAtual.respostas.forEach((resposta) => { // cria um botão para cada questão atual
@@ -220,7 +220,7 @@ function resultadoFinal() {
     })
 
     resetar(); // Reseta o estado antes de mostrar a pontuação
-    PerguntaElement.innerHTML = `Você acertou ${pontos} de ${pergunta.length}!`; // Exibe a pontuação final
+    PerguntaButton.innerHTML = `Você acertou ${pontos} de ${pergunta.length}!`; // Exibe a pontuação final
 
     console.log(erros, pontos)
 

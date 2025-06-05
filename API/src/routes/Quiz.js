@@ -11,6 +11,11 @@ router.get("/listar", function (req, res){
     quizController.listar(req, res);
 });
 
+router.get("/Pizza/:idUsuario", function (req, res){
+    quizController.Pizza(req, res);
+});
+
+
 router.get("/conferir/:idUsuario", function (req, res){
     quizController.conferir(req, res);
 });
