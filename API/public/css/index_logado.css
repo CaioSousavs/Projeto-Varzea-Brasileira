@@ -306,6 +306,7 @@ padding-left: 90px ;
     height: 75%;
     padding-left: 130px;
     padding-top: 250px;
+    padding-right: 0 0;
 }
 
 .foto {
@@ -315,10 +316,13 @@ padding-left: 90px ;
   width: 490px;
   height: 300px;
   border-radius: 10px;
-}
+  backdrop-filter: blur(30px);
+  }
+
 
 .ativa {
   opacity: 1;
+  display: flex ;
 }
 
 #botao-voltar, #botao-proximo {
@@ -334,13 +338,14 @@ padding-left: 90px ;
 #botao-voltar img {
   width: 100px;
   height: 100px;
-  margin-left: 100%;
+  margin-left: 110%;
+  margin-bottom: 100%;
 }
 
 #botao-proximo img {
   width: 100px;
   height: 100px;
-  margin-left: 500px;
+  margin-left: 550px;
   margin-top: 20%;
 }
 
@@ -348,7 +353,7 @@ padding-left: 90px ;
   transform: rotate(180deg);
 }
 
-.caixa-slider button{
+.caixa-slider {
 
 }
 
@@ -445,7 +450,7 @@ textos-principais-calc
     width: 50%;
 }
 
-input {
+input, select {
     border-style: none;
     border-radius: 20px;
     padding: 10px 10px;
@@ -475,6 +480,10 @@ input {
 {
     background-color: rgb(5, 172, 172);
     transform: scale(1.1);
+}
+ 
+.vazio{
+    font-size: 30px;
 }
 
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Várzea Brasileira</title>
+  <title>Campo de Sonhos</title>
   <link rel="stylesheet" href="css/index_logado.css">
   <script src="js/carrosel.js" defer></script>
   <link rel="icon" href="assets/logoSite.png">
@@ -98,7 +98,7 @@
             <img src="assets/p7.png" alt="" class="slider">
             <img src="assets/p8.png" alt="" class="slider">
             <img src="assets/p8.png" alt="" class="slider">
-            <button class="next"  id="next-button"><img src="assets/seta.png" alt=""></button>
+            <button class="next" id="next-button"><img src="assets/seta.png" alt=""></button>
           </div>
         </div>
       </div>
@@ -125,28 +125,36 @@
       <div class="imagemdoescudo">
         <img src="assets/escudoMarcone.png" alt="">
       </div>
-         <div class="caixa-slider">
-  <div class="caixa-fotos">
-    
-    <button class="prev" id="botao-voltar">
-      <img src="assets/seta.png" alt="Voltar">
-    </button>
-    
-    <img src="assets/p1.png" alt="Foto 1" class="foto ativa">
-    <img src="assets/p2.png" alt="Foto 2" class="foto">
-    <img src="assets/p3.png" alt="Foto 3" class="foto">
-    <img src="assets/p4.png" alt="Foto 4" class="foto">
-    <img src="assets/p5.png" alt="Foto 5" class="foto">
-    <img src="assets/p6.png" alt="Foto 6" class="foto">
-    <img src="assets/p7.png" alt="Foto 7" class="foto">
-    <img src="assets/p8.png" alt="Foto 8" class="foto">
+      <div class="caixa-slider">
+        <div class="caixa-fotos">
 
-    <button id="botao-proximo">
-      <img src="assets/seta.png" alt="Próximo">
-    </button>
-
-  </div>
+          <div class="botaoanterior">
+          <button class="prev" id="botao-voltar">
+            <img src="assets/seta.png" alt="Voltar">
+          </button>
 </div>
+          <img src="assets/m1.png" alt="Foto 1" class="foto ativa">
+          <img src="assets/m2.png" alt="Foto 2" class="foto">
+          <img src="assets/m3.png" alt="Foto 3" class="foto">
+          <img src="assets/m4.png" alt="Foto 4" class="foto">
+          <img src="assets/m5.png" alt="Foto 5" class="foto">
+          <img src="assets/m6.png" alt="Foto 6" class="foto">
+          <img src="assets/m7.png" alt="Foto 7" class="foto">
+          <img src="assets/m8.png" alt="Foto 8" class="foto">
+          <img src="assets/m9.png" alt="Foto 5" class="foto">
+          <img src="assets/m10.png" alt="Foto 6" class="foto">
+          <img src="assets/m11.png" alt="Foto 7" class="foto">
+          <img src="assets/m12.png" alt="Foto 8" class="foto">
+          <img src="assets/m13.png" alt="Foto 8" class="foto">
+
+          <div class="botaoProximo">
+          <button class="next" id="botao-proximo">
+            <img src="assets/seta.png" alt="Próximo">
+          </button>
+          </div>
+
+        </div>
+      </div>
 
     </div>
 
@@ -154,19 +162,26 @@
       <div class="textos-calc">
         <p>Calculadora</p>
         <div class="titulo-resposta">
-          <h1>Descubra agora quanto você ganharia na Várzea Brasileira!.</h1>
+          <h1>Descubra agora quanto você ganharia na Várzea Brasileira!</h1>
         </div>
         <div class="inputs_calc">
           <p>Insira a sua idade</p>
           <input type="number" id="ipt_idade" placeholder="Ex: 18 " />
           <p class="input-texto"> Insira sua posição</p>
-          <input type="number" id="ipt_visitasmedia" placeholder="Ex: Goleiro" />
+          <select name="" id="ipt_jogador">
+            <option value="Goleiro">Goleiro</option>
+            <option value="Zagueiro">Zagueiro</option>
+            <option value="Lateral">Lateral</option>
+            <option value="Volante">Volante</option>
+            <option value="Meio-Campista">Meio-Campista</option>
+            <option value="Atacante">Atacante</option>
+          </select>
           <p class="input-texto"> Insira seu nivel de habilidade</p>
-          <input type="number" id="ipt_visitasmedia" placeholder="1 a 5" />
+          <input type="number" id="ipt_habilidade" placeholder="1 a 5" />
         </div>
+        <div class="vazio" id="output"></div>
         <button class="botao_calc" onclick="calcular()">Calcular</button>
       </div>
-      <div class="vazio" id="div_resultado"></div>
     </div>
     </div>
   </main>
@@ -174,7 +189,7 @@
   <footer>
     <div class="footer">
       <div class="text">
-        <p>&copy; 2025 Várzea Brasileira. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Campo de Sonhos. Desenvolvido por João Caio Vieira de Sousa .</p>
       </div>
       <div class="imgFooter">
         <img src="assets/icon/linkedin.png" alt="Icon do Linkedin">
@@ -188,6 +203,58 @@
   b_usuario.innerHTML += sessionStorage.NOME_USUARIO;
   console.log(sessionStorage.NOME_USUARIO)
 
+  function calcular() {
+    let idade = Number(ipt_idade.value);
+    let posicao = ipt_jogador.value;
+    let habilidade = Number(ipt_habilidade.value);
+    let mensagem = ''
+    let salario = 150;
+
+
+
+    if (idade > 15 && idade < 27) {
+      salario *= 1.20;
+    } else if (idade <= 15) {
+      output.innerHTML = 'Sei que voce gosta de futebol, mas é melhor voe estudar.'
+      return;
+    } else {
+      salario *= 1.10;
+    }
+
+    if (posicao == 'goleiro') {
+      salario *= 1.15
+    } else if (posicao == 'zagueiro') {
+      salario *= 1.18
+    } else if (posicao == 'Lateral') {
+      salario *= 1.23
+    } else if (posicao == 'Volante') {
+      salario *= 1.30
+    } else if (posicao == 'Meio-Campo') {
+      salario *= 1.35
+    } else if (posicao == 'Atacante') {
+      salario *= 1.45
+    }
+
+    if (habilidade == '1') {
+      salario *= 1.50
+    } else if (habilidade == '2') {
+      salario *= 2
+    } else if (habilidade == '3') {
+      salario *= 3.0
+    } else if (habilidade == '4') {
+      salario *= 4.0
+    } else if (habilidade == '5') {
+      salario *= 5.0
+    }
+
+    let moeda = salario.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+
+    output.innerHTML += `<p>Solta o grito, craque! Na várzea, seu prêmio é de <b>${moeda}!</b><p>`
+    console.log(salario)
+  }
 
 </script>
 

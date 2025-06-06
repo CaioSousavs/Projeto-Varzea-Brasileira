@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>Campo de Sonhos | Dashboards</title>
 
 
-    <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="stylesheet" href="css/dashboards.css" />
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
 
@@ -36,29 +36,45 @@
                 <li><a href="index_login.html#jogador">Jogadores</a></li>
                 <li><a href="#" id="sobre_mim">Olá, <span id="b_usuario">usuário</span>!</a></li>
                 <div class="btn-logout" onclick="limparSessao()">
-                    <li><a href="">Sair</a></li>
+                    <li><a href="login.html ">Sair</a></li>
                 </div>
             </ul>
         </nav>
     </header>
     <div class="textoInicio">
-        <div class="Titulo">
+        <div class="titulo">
             <h1>Dashboard - <span id="a_usuario">usuario</span>!</h1>
 
+        </div> 
+        <div class="textinho">
+        <p>No campinho do quiz, você é o olheiro: veja quem dá show e quem joga com alma!</p>
         </div>
-        <p>Aqui você pode analisar o comportamento do quiz de todos os usuarios!</p>
     </div>
 
     <div class="dashboard">
-        <canvas id="graficoBarras">
+        <div class="graficoBarra">
+        <canvas class="graficoBarras" id="graficoBarras">
         </canvas>
+        </div>
 
 
         <div class="GraficoeKpi">
-            <div id="KPI"></div>
+            <div class="KPI" id="KPI"></div>
             <canvas id="graficoPizza"></canvas>
         </div>
     </div>
+
+      <footer>
+    <div class="footer">
+      <div class="text">
+        <p>&copy; 2025 Campo de Sonhos. Desenvolvido por João Caio Vieira de Sousa .</p>
+      </div>
+      <div class="imgFooter">
+        <img src="assets/icon/linkedin.png" alt="Icon do Linkedin">
+        <img src="assets/icon/github.png" alt="Icon do Github">
+      </div>
+    </div>
+  </footer>
 
 </body>
 
@@ -136,8 +152,6 @@
             .catch(err => console.error('Erro ao buscar dados:', err));
     }
 
-    window.addEventListener('load', gerarGraficoBarras);
-
 
     function gerarGraficoPizza() {
         const idUsuario = sessionStorage.NOME_USUARIO;
@@ -200,8 +214,8 @@
         const KPIerros = (erros * 100) / 8;
         const KPIacertos = (acertos * 100) / 8;
 
-        KPI.innerHTML += `<p>Porcentagem de Acertos: ${KPIacertos}%<br>
-                     Porcentagem de Erros: ${KPIerros}%</p>`
+        KPI.innerHTML += `<p> <span class ='usuario'>Desempenho ${idUsuario}</span> <br><span>Chutes Acertados: ${KPIacertos}%</span><br>
+                          Chutes Errados: ${KPIerros}%</p>`
 
 
         // Plotando o gráfico de pizza no canvas
