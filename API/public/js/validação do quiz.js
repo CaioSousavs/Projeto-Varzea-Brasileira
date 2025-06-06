@@ -2,6 +2,7 @@
 
 function conferir(){ 
     var idUsuario = sessionStorage.ID_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
     console.log("ID USUARIO FUNÇÃO: " + idUsuario)
    
     fetch(`/quiz/conferir/${idUsuario}`,
@@ -14,6 +15,8 @@ function conferir(){
         console.log("ENTREI AQUI")
         if(resposta.ok){
             console.log('entrei aqui12');
+            alert('Atenção ' + nome + ' Esse Quiz so pode ser realizado 1 Vez')
+
             
             resposta.json().then(function(resposta){
                 console.log(resposta);
@@ -21,12 +24,14 @@ function conferir(){
                     console.log('entrei aqui')
                 } else {
                     setTimeout(function() {
+                    alert(nome + '  você já respondeu o quiz! Você não pode fazer de novo.')
                             window.location = "index_login.html";
                         }, 1000);
     
                         console.log('não funcinou')
+                        return
                 }
-            })
+a            })
         }
     })
 }
@@ -154,28 +159,20 @@ function mostrarQuestao() {
 }
 
 
-function selectResposta(e) { // função de respostas selecionadas
+function selectResposta(selecionado) { // função de respostas selecionadas
     const resposta = pergunta[QuestaoAtualIndex].respostas; // puxa a resposta da pergunta atual
     const RespostaCorreta = resposta.filter((reposta) => reposta.correct === true)[0]; // proucura a questão certa
 
-    const btnSelecionado = e.target; // Puxa o botão que foi selecionado
+    const btnSelecionado = selecionado.target; // Puxa o botão que foi selecionado
     const Correta = btnSelecionado.dataset.id == RespostaCorreta.id; // ele ve se a resposta esta certa
     if (Correta) {
-        pontos++; // Adiciona ponto caso a resposta esteja certa
-        btnSelecionado.classList.add("correct"); // adiciona o css
+        pontos++; 
     } else {
         erros++
-        btnSelecionado.classList.add("incorrect"); // adiciono o css 
     }
-
-    // Desabilita todos os botões de resposta após uma seleção
-    Array.from(RespostasButtons.children).forEach((button) => { // desativa  todos os botões apos a escolha
-        button.disabled = true; // desativa o botão 
-        if (button.dataset.id == RespostaCorreta.id) {
-            button.classList.add("correct"); // marca a quetão correta
-        }
-    });
-
+        Array.from(RespostasButtons.children).forEach((button) => { // desativa  todos os botões apos a escolha
+            button.disabled = true; // desativa o botão 
+        });
     ProximoButton.style.display = "block"; // exibi o botão proximo
 }
 
@@ -185,7 +182,7 @@ ProximoButton.addEventListener("click", () => {  // ação para o proximo botão
     if (QuestaoAtualIndex < pergunta.length) {
         mostrarQuestao(); // mostra o proxima questão
     } else {
-        resultadoFinal(); // Caso não tenha mais questao ele exibi o resultado 
+        resultadoFinal(); 
     }
 });
 
@@ -227,7 +224,7 @@ function resultadoFinal() {
 
     const SairdoQuiz = document.createElement("button"); // cria o botão de refazer o quiz
     SairdoQuiz.innerHTML = "Sair do Quiz "; // Define o texto do botão
-    SairdoQuiz.classList.add("btn"); // Aadicona a class para ser usado no css
+    SairdoQuiz.classList.add("btn"); // adiciona a class para ser usado no css
     SairdoQuiz.addEventListener("click", () => {
       
         SairdoQuiz.remove(); // remove o botao refazer apos o click

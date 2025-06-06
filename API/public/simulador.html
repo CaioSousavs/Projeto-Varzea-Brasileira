@@ -21,12 +21,18 @@
   <header>
     <nav class="nav">
       <div class="logo">
-        <a href="index_login.html" > <img src="assets/Logo.png" alt=""></a>      </div>
+        <a href="index_login.html"> <img href="index_login.html" src="assets/Logo.png" alt=""></a>
+      </div>
       <ul class="menu">
         <li><a href="index_login.html">Home</a></li>
-        <li><a href="index_login.html#jogador">Jogadores</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="cadastro.html">Cadastrar</a></li>
+        <li><a href="index_login.html#jogador" id="sobre_mim">Jogador</a></li>
+        <li><a href="index_login.html#calculadora">Calculadora</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="#">Olá,<span id="b_usuario"></span>!</a></li>
+        <div class="btn-logout" onclick="limparSessao()">
+          <li><a href="login.html">Sair</a></li>
+        </div>
       </ul>
     </nav>
   </header>
@@ -62,6 +68,7 @@
 
 </body>
 <script>
+    b_usuario.innerHTML += sessionStorage.NOME_USUARIO;
 
   function sim(){
     setTimeout(function () {

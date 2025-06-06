@@ -207,7 +207,7 @@
     let idade = Number(ipt_idade.value);
     let posicao = ipt_jogador.value;
     let habilidade = Number(ipt_habilidade.value);
-    let mensagem = ''
+    output.innerHTML = ''
     let salario = 150;
 
 
@@ -252,7 +252,7 @@
       currency: 'BRL'
     });
 
-    output.innerHTML += `<p>Solta o grito, craque! Na várzea, seu prêmio é de <b>${moeda}!</b><p>`
+    output.innerHTML += `<p>Solta o grito, craque! Na várzea, seu Salário é de <b>${moeda} por jogo!</b><p>`
     console.log(salario)
   }
 
